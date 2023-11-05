@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Pesantren</title>
+		<title>Pesantren Hidayatullah</title>
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 			rel="stylesheet"
@@ -16,6 +16,54 @@
 			<h3>Hidayatullah</h3>
 			<p>#SANTRIBANGUNNEGERI</p>
 		</header>
+		<div
+			class="modal fade"
+			id="staticBackdrop"
+			data-bs-backdrop="static"
+			data-bs-keyboard="false"
+			tabindex="-1"
+			aria-labelledby="staticBackdropLabel"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form action="">
+							<label for="username">Username</label>
+							<input id="username" required type="text" placeholder="johndoe30" />
+
+							<label for="password">Password</label>
+							<input id="password" disabled required type="password" placeholder="*******" />
+							<button class="login signin" type="submit">Masuk</button>
+							<button class="help" data-bs-target="#staticBackdrop2" data-bs-toggle="modal">Butuh Bantuan</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="staticBackdrop2" aria-hidden="true" aria-labelledby="staticBackdrop2" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="staticBackdrop2">Bantuan</h1>
+						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<p>Sampaikan kendala anda melalui kontak berikut</p>
+						<ul>
+							<li>Telp/WA : 081234567890</li>
+							<li>E-Mail : example@mail.com</li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+						<button class="login" data-bs-target="#staticBackdrop" data-bs-toggle="modal">Masuk</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		<section>
 			<div id="intro">
 				<h1>Santri <span>Siap</span> Bangun <span>Negeri</span> !</h1>
@@ -24,8 +72,8 @@
 					necessitatibus iusto nam harum explicabo quod minus qui reiciendis ea molestiae libero!
 				</p>
 				<div>
-					<button id="login">Masuk</button>
-					<button id="help">Butuh Bantuan</button>
+					<button type="button" class="login" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Masuk</button>
+					<button class="help" data-bs-target="#staticBackdrop2" data-bs-toggle="modal">Butuh Bantuan?</button>
 				</div>
 			</div>
 			<div id="gallery">
@@ -52,6 +100,7 @@
 				</div>
 			</div>
 		</section>
+		<script src="./assets/script/app.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
 			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -60,5 +109,6 @@
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
 			integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
 			crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 	</body>
 </html>
