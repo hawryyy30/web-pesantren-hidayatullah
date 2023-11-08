@@ -1,0 +1,14 @@
+@font-face {
+	font-family: "hidayatullah";
+	src: url("/assets/font/hidayatullah.ttf");
+}
+:root {
+	--color-green: #4ac61a;
+	--color-white: #fff;
+	--color-black: #212121;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}

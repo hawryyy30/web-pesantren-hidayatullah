@@ -1,0 +1,94 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+header{
+	margin: 2rem;
+	background-color: var(--color-green);
+	border-radius: 2rem;
+	display: flex;
+	justify-content: space-between;
+	padding: .5rem 2rem;
+	align-items: center;
+}
+header a{
+	color: var(--color-green);
+	padding: .5rem 1rem;
+	border-radius: 2rem;
+	background-color: var(--color-white);
+	text-decoration: none;
+
+}
+#name{
+	padding: .5rem;
+}
+#name h3{
+	color: var(--color-black);
+}
+#name p{
+	color: var(--color-white);
+}
+
+.highlight{
+	color: var(--color-white);
+}
+.card-stack {
+	padding: 1rem 2rem;
+	display: grid;
+	grid-template-columns: repeat(4, 3fr);
+	gap: 1rem;
+}
+
+.card {
+	font-size: 12px;
+	overflow: hidden;
+	position: relative;
+	border-radius: 1rem;
+}
+
+#menu{
+	color: var(--color-green);
+	padding: 1rem ;
+	margin: 0 auto;
+	text-align: center;
+}
+.card h5 {
+	color: var(--color-green);
+}
+
+.card::before {
+	z-index: 3;
+	position: absolute;
+	inset: 0;
+	content: "";
+	background-color: rgba(60, 60, 60, 0.426);
+}
+
+.text-overlay {
+	z-index: 10;
+	position: absolute;
+	bottom: 0;
+	transform: translateY(100%);
+	color: var(--color-white);
+	padding: 1rem;
+	transition: transform 0.8s ease-in-out;
+}
+
+.card:active {
+	transform: translateY(-10px);
+	transition: transform 0.1s ease-in-out;
+}
+
+.card:hover > .text-overlay {
+	transform: translateY(0%);
+}
+
+.card img {
+	transition: transform 0.8s ease-in-out;
+}
+.card:hover > img {
+	transform: scale(1.2);
+}

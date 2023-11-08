@@ -1,17 +1,4 @@
-@font-face {
-	font-family: "hidayatullah";
-	src: url("/assets/font/hidayatullah.ttf");
-}
-:root {
-	--color-green: #4ac61a;
-	--color-white: #fff;
-	--color-black: #212121;
-}
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+
 
 body {
 	overflow: hidden;
@@ -64,7 +51,7 @@ section {
 	height: 100vh;
 	display: flex;
 	justify-content: space-between;
-	padding: 1.5rem;
+	padding: 2rem 1.5rem;
 	background: url("/assets/images/bg-image.webp");
 	background-repeat: no-repeat;
 	background-size: cover;

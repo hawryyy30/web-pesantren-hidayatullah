@@ -13,7 +13,6 @@ function resetForm() {
 	passwordField.value = "";
 }
 
-
 username.addEventListener("input", () => {
 	if (username.value.length > 0) {
 		password.removeAttribute("disabled");
@@ -21,7 +20,6 @@ username.addEventListener("input", () => {
 		password.setAttribute("disabled", "");
 	}
 });
-
 
 form.addEventListener("submit", async (e) => {
 	e.preventDefault();
@@ -32,11 +30,13 @@ form.addEventListener("submit", async (e) => {
 	const account = accounts.find((account) => account.username === username && account.password === password);
 	if (account != null) {
 		if (account.isAdmin === true) {
-            alert("Login Berhasil")
-			window.location.href = "admin-dashboard.html";
+			alert("Login Berhasil");
+			resetForm();
+			window.location.href = "dashboard.html?admin=true";
 		} else {
-            alert("Login Berhasil")
-			window.location.href = "user-dashboard.html";
+			alert("Login Berhasil");
+			resetForm();
+			window.location.href = "dashboard.html";
 		}
 	} else {
 		alert("User tidak terdaftar");
