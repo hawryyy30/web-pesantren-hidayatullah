@@ -41,7 +41,7 @@
                 $sql = "SELECT * FROM clients";
                 $result = $connection->query($sql);
 
-                if (!result) {
+                if (!$result) {
                     die("Invalid query: " . $connection->error);
                 }
 
