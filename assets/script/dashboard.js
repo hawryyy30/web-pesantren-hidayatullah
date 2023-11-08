@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const urlParams = new URLSearchParams(window.location.search);
 	const urlUsername = urlParams.get("user");
-	const urlIsAdmin = urlParams.get("isadmin");
 	const userEl = document.querySelector("span.username");
 	if (urlUsername) {
 		userEl.textContent = urlUsername;
