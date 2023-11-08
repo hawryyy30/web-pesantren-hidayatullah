@@ -17,30 +17,24 @@ document.addEventListener("DOMContentLoaded", () => {
 		window.location.href = "index.html";
 	}
 
+	const mainSection = document.querySelector("main");
+	const cardStack = document.querySelector(".card-stack");
 
+	cardStack.addEventListener("click", (e) => {
+		e.preventDefault();
 
-    const mainSection = document.querySelector("main");
-    const cardStack = document.querySelector(".card-stack");
-    
-
-    cardStack.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        if(e.target.classList.contains("card") && e.target.getAttribute("imgSrc") !== "Siswa") {
-            const imgSrc = e.target.getAttribute("imgSrc");
-            const menuIndicator = document.querySelector("h2#menu");
-            menuIndicator.textContent = imgSrc;
-            mainSection.innerHTML = `
+		if (e.target.classList.contains("card") && e.target.getAttribute("imgSrc") !== "Siswa") {
+			const imgSrc = e.target.getAttribute("imgSrc");
+			const menuIndicator = document.querySelector("h2#menu");
+			menuIndicator.textContent = imgSrc;
+			mainSection.innerHTML = `
             <div class="submenu">
             <img src="./assets/images/menu/${imgSrc}.png " width="100%" alt="">
             <a id="back" href="">Kembali</a>
         </div>
             `;
-        } else{
-            window.location.href = "namaSiswa.php";
-        }
-    });
+		} else if (e.target.getAttribute("imgSrc") === "Siswa") {
+			window.location.href = "namaSiswa.php";
+		}
+	});
 });
-
-
-
