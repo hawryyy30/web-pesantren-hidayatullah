@@ -49,6 +49,21 @@ header a{
 	border-radius: 1rem;
 }
 
+.submenu{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin:2rem;
+}
+.submenu a{
+	text-align: center;
+	color: var(--color-white);
+	text-decoration: none;
+	background-color: var(--color-green);
+	border-radius: 1rem;
+	padding: .5rem 1rem;
+}
 #menu{
 	color: var(--color-green);
 	padding: 1rem ;

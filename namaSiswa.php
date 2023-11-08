@@ -9,7 +9,7 @@
 <body>
     <div class="container my-5">
         <h2> Nama Santri </h2>
-        <a class="btn btn-primary" href="/Pesantren/create.pjp" role="button">New</a>
+        <a class="btn btn-primary addNewButton" href="/Pesantren/create.pjp" role="button">New</a>
         <br>
         <table class="table">
             <thead>
@@ -52,10 +52,6 @@
                         <td>$row[JenisKelamin]</td>
                         <td>$row[Alamat]</td>
                         <td>$row[created_at]</td>
-                        <td>
-                            <a class='btn btn-primary btn-sm' href='/Pesantren/edit.php?NO=$row[NO]'>Edit</a>
-                            <a class='btn btn-primary btn-sm' href='/Pesantren/hapus.php?NO=$row[NO]'>Hapus</a>
-                        </td>
                     </tr>
                     ";
                 }
@@ -65,4 +61,9 @@
         </table>
     </div> 
 </body>
+<script>
+    if(sessionStorage.getItem("privilege")==="false"){
+        document.querySelector(".addNewButton").style.display = "none";
+    }
+</script>
 </html>

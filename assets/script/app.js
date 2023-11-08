@@ -13,7 +13,7 @@ function resetForm() {
 	passwordField.value = "";
 }
 
-username.addEventListener("input", () => {
+usernameField.addEventListener("input", () => {
 	if (username.value.length > 0) {
 		password.removeAttribute("disabled");
 	} else {
@@ -29,17 +29,17 @@ form.addEventListener("submit", async (e) => {
 	const accounts = await getAccounts();
 	const account = accounts.find((account) => account.username === username && account.password === password);
 	if (account != null) {
-		if (account.isAdmin === true) {
-			alert("Login Berhasil");
-			resetForm();
-			window.location.href = "dashboard.html?admin=true";
-		} else {
-			alert("Login Berhasil");
-			resetForm();
-			window.location.href = "dashboard.html";
+		alert("Login Berhasil");
+		resetForm();
+		if(sessionStorage.getItem("privilege")===null){
+			sessionStorage.setItem("privilege",account.isAdmin)
 		}
+
+		window.location.href = `dashboard.html?user=${account.username}&isadmin=${account.isAdmin}`;
 	} else {
 		alert("User tidak terdaftar");
 		resetForm();
 	}
 });
+
+// dashboard
