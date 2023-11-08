@@ -29,10 +29,12 @@ form.addEventListener("submit", async (e) => {
 	const accounts = await getAccounts();
 	const account = accounts.find((account) => account.username === username && account.password === password);
 	if (account != null) {
+		sessionStorage.clear();
 		alert("Login Berhasil");
 		resetForm();
-		if(sessionStorage.getItem("privilege")===null){
-			sessionStorage.setItem("privilege",account.isAdmin)
+		if (sessionStorage.getItem("privilege") === null) {
+			sessionStorage.setItem("username", account.username);
+			sessionStorage.setItem("privilege", account.isAdmin);
 		}
 
 		window.location.href = `dashboard.html?user=${account.username}&isadmin=${account.isAdmin}`;
@@ -42,4 +44,3 @@ form.addEventListener("submit", async (e) => {
 	}
 });
 
-// dashboard

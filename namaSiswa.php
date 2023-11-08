@@ -11,7 +11,8 @@
 <body>
     <div class="container my-5">
         <h2> Nama Santri </h2>
-        <a class="btn btn-primary addNewButton" href="/Pesantren/create.pjp" role="button">New</a>
+        <a class="btn btn-primary addNewButton" href="create.html" role="button">Tambah</a>
+        <a class="btn btn-danger backButton" href="#" role="button">Kembali</a>
         <br>
         <table class="table">
             <thead>
@@ -64,6 +65,13 @@
     </div>
 </body>
 <script>
+    const backButton = document.querySelector(".backButton");
+    backButton.addEventListener("click", (e) => {
+        const privilege = sessionStorage.getItem("privilege");
+        const username = sessionStorage.getItem("username");
+       e.preventDefault();
+       window.location.href = `dashboard.html?user=${username}&isAdmin=${privilege}`
+    });
     if (sessionStorage.getItem("privilege") === null) {
         alert("Sesi login anda telah habis. Silahkan login kembali");
         window.location.href = "index.html";
