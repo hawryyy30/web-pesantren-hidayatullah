@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const urlParams = new URLSearchParams(window.location.search);
 	const urlUsername = urlParams.get("user");
-    const urlIsAdmin = urlParams.get("isadmin");
+	const urlIsAdmin = urlParams.get("isadmin");
 	const userEl = document.querySelector("span.username");
 	if (urlUsername) {
 		userEl.textContent = urlUsername;
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
             `;
 		} else if (e.target.getAttribute("imgSrc") === "Siswa") {
-			window.location.href = "namaSiswa.php";
+			window.location.href = "namaSiswa.html";
 		}
 	});
 });

@@ -24,7 +24,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO clients (Nama, NIS, JenisKelamin, Alamat) VALUES ('$nama', '$nis', '$jenisKelamin', '$alamat')";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: namaSiswa.php");
+        header("Location: namaSiswa.html");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
